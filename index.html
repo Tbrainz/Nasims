@@ -1,0 +1,331 @@
+# Nasims
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home-NASIMS</title>
+    {% block styles %} {% endblock %}
+    <link rel="stylesheet" href="{% static 'bootstrap-icons\bootstrap-icons.css' %}">
+    <link rel="stylesheet" href="{% static 'css\style.css' %}">
+    <link rel="shortcut icon" href="{% static 'images/nasims-logo.webp' %}" type="image/x-icon">
+    <script src="{% static 'js\script.js' %}"></script>
+</head>
+<body>
+    {% block header %}
+    <!---Header-->
+    <header class="header">
+        <div class="">
+
+            <!---Navigation-->
+            <nav class="navigation ">
+
+                <!---Menu-->
+               <div class="menu">
+                <button id="jsStyle" onclick="menu">Drop</button>
+               </div>
+               {% block logo %}
+               <!---text-->
+                <h3 class="text">Federal Ministry of Humanitarin Affairs and disaster Management</h3 class="text">
+                {% endblock %}
+                <!---nav-list-->
+                <ul class="nav-list">
+                    {% block navlink %}
+                    <li><a href="">Home</a></li>
+                    <li><a href="">About</a></li>
+                    <li><a href="">Contact</a></li>
+                    {% endblock %}
+                    <li>
+                        {% block profile %}
+                        {% if request.user.is_authenticated %}
+                            <a href="{% url 'account:logout' %}">
+                                <button class="nav-button">Logout</button>
+                            </a>
+                        {% else %}
+                            <a href="{% url 'account:login' %}">
+                                <button class="nav-button">Login</button>
+                            </a>
+                        {% endif %}
+                        {% endblock %}
+                    </li>
+                
+                </ul>
+            </nav>
+        </div>
+    </header>
+    {% endblock %}
+    <!--- End of Header-->
+
+
+    <!---Content-->
+    <div class="content">
+        {% block content %}
+        <div class="main">
+
+            <!---div - text-->
+            <div class="div-text">
+                <div class="text-logo">
+                    <img class="logo" src="{% static 'images/nasims-logo.webp' %}" alt="">
+                </div>
+            
+                <div class="text-text">
+                    <span>Welcome to the</span> 
+                    <h1>National Social Investment Management System (NASIMS) Portal</h1>
+                    The National Social Investment Management System (NASIMS) is 
+                    the central management platform for the administration and 
+                    coordination of Social Investment Programmes under the Federal 
+                    Ministry of Humanitarian Affairs,
+                    Disaster Management and Social Development. 
+                    
+                    <p><a href="">Read more</a></p>
+                </div>
+            </div>
+
+            <!---div-img-->
+            <div class="div-img"></div>
+        </div>
+
+
+    <!---end of content-->
+    
+    <div class="hero-footer">
+        <p>Read more about our response to Covid-19 pandemic</p>
+    </div>
+
+
+    <!-----description-->
+    <div class="description">
+
+        <div class="desc-img"></div>
+
+        <div class="desc-text">
+
+            <h2>Welcome to the National Social Investment Management System (NASIMS)</h2>
+            <p>
+            <a href="">The Federal Ministry of Humanitarian Affairs, Disaster Management and Social Development</a>
+             was established on Wednesday August 21st, 2019 by an Executive pronouncement by the
+              President and Commander in Chief of the Armed Forces of Nigeria, H.E., Muhammadu
+               Buhari GCFR at the inauguration of Ministers for the Federal Republic of Nigeria.
+                Under My leadership as Minister, the Ministry will position itself in light of
+                 the prevailing Humanitarian situation in the country through its Vision, Mission 
+                 and Core values to promote Human dignity and Integration of basic Humane benevolence
+                  and compassion in the treatment of all Nigerians
+            </p>
+            <span>
+            Sadiya Umar Farouq<br />
+            Honorable Minister
+            </span> 
+        </div>
+    </div>
+
+
+    <div class="content3">
+
+        <div class="content3-img"></div>
+
+        <div class="content3-text">
+            <a href="">About us</a>
+            <h2>Providing efficient, effective, and coordinated humanitarian response to Nigerians.</h2>
+            <p>
+            The National Social Investment Program of Nigeria is a social welfare initiative created 
+            by the Federal government of Nigeria in 2015 under the direction of the National Social 
+            Investment Office. The Program was created to ensure a more equitable distribution of 
+            resources to vulnerable populations, including children, youth, and women. Under President
+             Muhammadu Buhari the office has created four programs to address poverty and help increase
+              economic development.
+              </p>
+
+              <div class="content3-text-btn">
+                <button>Read More</button>
+            </div>
+        </div>
+        
+    </div>
+
+    <div class="content4">
+        <div class="content4-head">
+            <h5>Our Programmes</h5>
+
+            <p>Our programmes are specifically designed to empower, train and uplift millions of 
+            abandoned Nigerians in every part of the country. 
+            </p>
+        </div>
+
+        <div class="content4-body">
+            <div class="content4-body-1">
+                <div class="body1-img">
+                    <img src="../static/images/geep-hero.dac629b.webp" alt="">
+                </div>
+
+                <div class="body1-text">
+                    <h3>Government Enterprise and Empowerment Program (GEEP)</h3>
+                    <p>
+                    The Government Enterprise and Empowerment Program was established to provide 
+                    financial support and training 
+                    to businesses and entrepreneurs at the bottom of the financial pyramid.
+                    </p>
+                </div>
+
+                <div class="body1-btn">
+                    <a href="/"><button class="apply">Apply Now</button></a>
+                    <a href="/"><button class="learn">Learn More</button></a>
+                </div>
+
+                
+
+            </div>
+
+            <div class="content4-body-2">
+                <div class="body2-img">
+                    <img src="../static/images/program-cct.3788daa.webp" alt="">
+                </div>
+
+                <div class="body2-text">
+                    <h3>Conditional Cash Transfer (CCT)</h3>
+                    <p>
+                      Nigeria's Conditional Cash Transfer program provides targeted cash transfers 
+                    to the most vulnerable
+                     households with the long-term goal of lifting millions out of poverty.  
+                    </p>
+                     
+                </div>
+
+                <div class="body1-btn">
+                    <a href="/"><button class="apply">Apply Now</button></a>
+                    <a href="/"><button class="learn">Learn More</button></a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+    <div class="content5">
+        <div class="content5-head">
+            <h3> Latest News </h3>
+            <p>Keep up with the latest updates about programmes and events</p>
+                 
+        </div>
+
+        <div class="content5-body">
+            <div class="content5-body-1">
+                <div class="content5-img">
+                    <img src="../static/images/batch-c.a296291.webp" alt="">
+                </div>
+
+                <div class="content5-text">
+                   <h3> N-Power Batch C</h3>
+
+                    <span class="j">June 25,</span><span class="jj"> 2020</span>
+                    <p>
+                    All empower batch c applicants are expected to update their profile
+                     and take test for possible shortlisting... 
+                    </p>
+                </div>
+            </div>
+
+            <div class="content5-body-2">
+                <div class="content5-img">
+                    <img src="../static/images/call-center.1c47ad8.webp" alt="">
+                </div>
+
+                <div class="content5-text">
+
+                    <h3>N-Power Customer Care</h3>
+
+                    <span class="j">June 25,</span>
+                    <span class="jj">2020</span>
+                    <p>
+                    All enquires and complains should be channeled through the N-Power 
+                    customer care line. Details are as follows: 
+                    </p>
+                </div>
+            </div>
+
+            <div class="content5-body-3">
+                <div class="content5-img">
+                    <img src="../static/images/test-portal.cd18cfc.webp" alt="">
+                </div>
+
+                <div class="content5-text">
+
+                    <h3>NASIMS Test Portal</h3>
+
+                    <span class="j">June 25,</span>
+                    <span class="jj">2020</span>
+                    <p>
+                    Please make sure your records are fully updated on the NASIMS 
+                    portal before taking this test... 
+                    </p>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="content5-btn">
+           <button>News Page</button>
+        </div>
+    </div>
+
+    <div class="last-section">
+
+    <div class="content6">
+        <div class="content6-body">
+        <h5>Be the first to know</h5>
+        <h2>Follow us on our social media platforms for all the latest updates and applications news</h2>
+        </div>
+
+        <div class="icons">
+            <i class="bi bi-facebook"></i>
+            <i class="bi bi-twitter"></i>
+            <i class="bi bi-instagram"></i>
+        </div> 
+    </div>
+
+    <div class="content7">
+        <div class="content7-text">
+            <h2>Got Questions?</h2>
+            <p>
+            For enquiries, complaints or requests, feel free to reach out to us. 
+            </p>
+        </div>
+
+        <div class="content7-btn">
+            <button>Contact Us</button>
+        </div>
+    </div>
+
+
+
+    <div class="content8">
+        <div class="content8-links">
+            <ul>
+                <li><a href="">Apply</a></li>
+                <li><a href="">About</a></li>
+                <li><a href="">News</a></li>
+                <li><a href="">Contact </a></li>
+            </ul>
+        </div>
+
+        <div class="icons">
+            <i class="bi bi-facebook"></i>
+            <i class="bi bi-twitter"></i>
+            <i class="bi bi-instagram"></i>
+        </div>  
+
+        <div class="content8-text">
+            <h5>Copyright 2023. Federal Ministry of Humanitarian Affairs,
+                 Disaster Management and Social Development. All Rights Reserved. </h5>
+        </div>
+    </div>
+
+</div>
+
+</div>
+
+{% endblock %}
+{% block extrablock %}{% endblock %}
+</body>
+</html>
